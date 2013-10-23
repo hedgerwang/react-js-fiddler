@@ -1,6 +1,5 @@
 {
   "name": "react-js-fiddler",
-  "version": "0.1-dev",
   "description": "sldies and examples for qconfshanghai2013",
   "dependencies": {
     "React": "git://github.com/facebook/react.git"
