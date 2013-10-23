@@ -1,9 +1,6 @@
 {
   "name": "react-js-fiddler",
   "description": "sldies and examples for qconfshanghai2013",
-  "dependencies": {
-    "React": "git://github.com/facebook/react.git"
-  },
   "author": {
     "name": "Hedger Wang",
     "email": "hedgerwang@gmail.com",
