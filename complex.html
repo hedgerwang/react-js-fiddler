@@ -25,6 +25,21 @@
   <div id="jsxCompiler"></div>
   <div class="clear"></div>
 </div>
-<script type="text/javascript" src="src/jsx-compiler.js"></script>
+<script type="text/plain" id="code">
+var HelloMessage = React.createClass({
+  render: function() {
+    return <div>{'Hello ' + this.props.name}</div>;
+  }
+});
+
+var mountNode = document.getElementById('renderTarget');
+React.renderComponent(<HelloMessage name="John" />, mountNode);
+</script>
+<script>
+React.renderComponent(
+  ReactPlayground( {codeText: code.textContent, renderCode:true} ),
+  document.getElementById('jsxCompiler')
+);
+</script>
 </body>
 </html>

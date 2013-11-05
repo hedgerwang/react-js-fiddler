@@ -3,23 +3,27 @@ html {
   font-family: proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-family: 'source-code-pro', Menlo, 'Courier New', Consolas, monospace;
   font-weight: 300;
-  color: #484848;
-  
+  color: #484848;  
 }
 
 
 html {
-  background: #f9f9f9;
+  background: #444;
 }
 
 #renderTarget {
   background: #fff;
   padding: 14px;
+  margin: 0 0 4px 0;
+}
+
+.simple #renderTarget {
+  display: none;
 }
 
 * {
-  font-family: 'source-code-pro', Menlo, 'Courier New', Consolas, monospace !important;	
-  font-size: 13px !important;	
+  font-family: 'source-code-pro', Menlo, 'Courier New', Consolas, monospace !important; 
+  font-size: 13px !important; 
   line-height: 18px !important;
 }
 
@@ -262,13 +266,15 @@ a:focus {
 
 .playgroundCode,
 .playgroundPreview {
-  ox-sizing: border-box;
+  background: #fff;
+  box-sizing: border-box;
   display: block;
   overflow: hidden;
-  max-width: 600px;
   float: left;
   vertical-align: top;
-  box-sizing: border-box;  
+  box-sizing: border-box; 
+  width: 50%;
+  min-height: 60vh;
 }
 
 .playgroundPreview {

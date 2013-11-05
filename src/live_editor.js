@@ -67,7 +67,11 @@ var ReactPlayground = React.createClass({displayName: 'ReactPlayground',
   },
 
   getDesugaredCode: function() {
-    return JSXTransformer.transform(this.state.code).code;
+    var code = this.state.code;
+    if (code.indexOf('/** @jsx React.DOM */') < 0) {
+      code = '/** @jsx React.DOM */\n' + code;
+    }
+    return JSXTransformer.transform(code).code;
   },
 
   render: function() {
@@ -122,13 +126,16 @@ var ReactPlayground = React.createClass({displayName: 'ReactPlayground',
         } catch (ex) {
           // pass
           console.log(ex.message);
+          document.getElementById('renderTarget').textContent = 
+            'error:' + ex.message;
         }
       } else {
         eval(code);
       }
-    } catch (e) {
+    } catch (ex) {
+      console.log(ex.message);
       React.renderComponent(
-        React.DOM.div( {content:e.toString(), className:"playgroundError"} ),
+        React.DOM.div( {content: ex.toString(), className:"playgroundError"} ),
         mountNode
       );
     }
